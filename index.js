@@ -70,14 +70,10 @@ app.get("/secrets", async(req, res) => {
     }catch (err){
       console.log(err);
     }
-    //TODO: Update this to pull in the user secret to render in secrets.ejs
   } else {
     res.redirect("/login");
   }
 });
-
-//TODO: Add a get route for the submit button
-//Think about how the logic should work with authentication.
 
 app.get("/submit", (req, res) => {
   if(req.isAuthenticated()){
@@ -144,8 +140,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-//TODO: Create the post route for submit.
-//Handle the submitted data and add it to the database
 app.post("/submit", async(req, res) => {
   const secret = req.body.secret;
   //console.log(req.user)
